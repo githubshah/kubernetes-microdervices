@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "8"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"7"},"creationTimestamp":"2022-05-08T14:25:07Z","generation":25,"labels":{"app":"cc3"},"name":"cc3","namespace":"default","resourceVersion":"17511","uid":"3bc6dfcd-0b14-4cb8-9b5a-e70505b7fdeb"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"cc3"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"cc3"}},"spec":{"containers":[{"env":[{"name":"CURRENCY_EXCHANGE_SERVICE_HOST","value":"http://ce3"}],"image":"shaid/cc3:0.0.121-SNAPSHOT","imagePullPolicy":"IfNotPresent","name":"cc3","resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2022-05-08T17:22:27Z","lastUpdateTime":"2022-05-08T17:22:27Z","message":"Deployment has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"},{"lastTransitionTime":"2022-05-09T02:43:22Z","lastUpdateTime":"2022-05-09T02:46:38Z","message":"ReplicaSet \"cc3-7b49f4ccc\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"}],"observedGeneration":25,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}
+  creationTimestamp: "2022-05-08T14:25:07Z"
+  generation: 26
+  labels:
+    app: cc3
+  name: cc3
+  namespace: default
+  resourceVersion: "17760"
+  uid: 3bc6dfcd-0b14-4cb8-9b5a-e70505b7fdeb
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: cc3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cc3
+    spec:
+      containers:
+      - env:
+        - name: CURRENCY_EXCHANGE_SERVICE_HOST
+          value: http://ce3
+        image: shaid/cc3:0.0.121-SNAPSHOT
+        imagePullPolicy: IfNotPresent
+        name: cc3
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2022-05-08T17:22:27Z"
+    lastUpdateTime: "2022-05-08T17:22:27Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2022-05-09T02:43:22Z"
+    lastUpdateTime: "2022-05-09T02:49:30Z"
+    message: ReplicaSet "cc3-68cfd4dd7f" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 26
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
