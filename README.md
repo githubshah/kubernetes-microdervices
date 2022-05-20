@@ -1,5 +1,5 @@
 
-// MUST use SNAPSHOT whilke creating iimage
+// MUST use SNAPSHOT while creating iimage
 
 // create exchange image and conversion image.
 
