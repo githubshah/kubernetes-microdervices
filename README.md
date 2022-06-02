@@ -1,4 +1,4 @@
-
+docker run --name nginx100 -v $PWD/content:/usr/share/nginx/html -d nginx
 // MUST use SNAPSHOT while creating iimage
 
 // create exchange image and conversion image.
